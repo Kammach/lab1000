@@ -2,11 +2,12 @@
 using namespace std;
 
 int main() {
-    int count[5] = {}; // A, B, C, D, F
+    int count[5] = {};   // A, B, C, D, F
     char grade;
     int student = 1;
+    int total = 0;
 
-    cout << "Please input grade of each student (A-F) or input 0 to exit.\n\n";
+    cout << "Please input grade of each student (A-F) or input 0 to exit.\n";
 
     do {
         cout << "Student [" << student << "]: ";
@@ -16,33 +17,37 @@ int main() {
             break;
         } else if (grade == 'A') {
             count[0]++;
+            total++;
             student++;
         } else if (grade == 'B') {
             count[1]++;
+            total++;
             student++;
         } else if (grade == 'C') {
             count[2]++;
+            total++;
             student++;
         } else if (grade == 'D') {
             count[3]++;
+            total++;
             student++;
         } else if (grade == 'F') {
             count[4]++;
+            total++;
             student++;
         } else {
-            cout << "\nWrong input. Please input again.\n\n";
+            cout << "Wrong input. Please input again.\n";
+            // NO add student
         }
 
     } while (true);
 
-    int total = count[0] + count[1] + count[2] + count[3] + count[4];
-
-    cout << "\nIn total " << total << " students.\n\n";
+    cout << "In total " << total << " students.\n";
     cout << "A = " << count[0] << ", ";
     cout << "B = " << count[1] << ", ";
     cout << "C = " << count[2] << ", ";
     cout << "D = " << count[3] << ", ";
-    cout << "F = " << count[4] << endl;
+    cout << "F = " << count[4];
 
     return 0;
 }
